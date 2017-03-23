@@ -1,8 +1,9 @@
 import * as React from 'react';
-import * as classNames from 'classnames';
+import { View } from 'react-native';
+// import * as styles from 'styles';
 import { PeerPhoto } from 'containers/PeerPhoto';
 
-const style = require('./style.css');
+const s = require('./style.js');
 
 interface IChatListBasicProps {
   id: number;
@@ -20,37 +21,39 @@ interface IChatListFullProps extends IChatListBasicProps {
 
 type UnreadProps = { unread: number };
 const UnreadBadge = ({ unread }: UnreadProps) => {
-  const block = classNames({
-    [style.unread]: true,
-    [style.hidden]: unread === 0,
-  });
+  // TODO: react-native
+  /*const block = styles({
+    [s.unread]: true,
+    [s.hidden]: unread === 0,
+  });*/
   return (
-    <div className={block}>
-      <div className={style.counter}>{unread}</div>
-    </div>
+    <View style={s.unread}>
+      <View style={s.counter}>{unread}</View>
+    </View>
   );
 };
 
 type SenderProps = { userName: string };
 const SenderPreview = ({ userName }: SenderProps) => {
-  const sender = classNames({
-    [style.sender]: true,
-    [style.hidden]: !userName,
-  });
+  // TODO: react-native
+  /*const sender = styles({
+    [s.sender]: true,
+    [s.hidden]: !userName,
+  });*/
   return (
-    <div className={sender}>
-        <span>{userName}</span>
-        <span>:</span>
-    </div>
+    <View style={s.sender}>
+      <span>{userName}</span>
+      <span>:</span>
+    </View>
   );
 };
 
 type MessageProps = { text: string, userName: string, isYou: boolean };
 const MessagePreview = ({ text, userName, isYou }: MessageProps) => (
-  <div className={style.message}>
+  <View style={s.message}>
     <SenderPreview userName={isYou ? 'You' : userName} />
     <span>{text}</span>
-  </div>
+  </View>
 );
 
 // <PeerPhoto peerID={id} />
@@ -61,27 +64,28 @@ export class ChatListItemEmpty extends React.Component<IChatListBasicProps, {}> 
       id,
       name,
       click,
-      selected,
+      // selected,
       children,
     } = this.props;
-    const block = classNames({
-      [style.item]: true,
-      [style.active]: selected,
-    });
+    // TODO: react-native
+    /*const block = styles({
+      [s.item]: true,
+      [s.active]: selected,
+    });*/
     return (
-      <div
+      <View
         onClick={click}
-        className={block}>
+        style={s.item}>
         <PeerPhoto peerID={id} />
-        <div className={style.info}>
-          <div className={style.top}>
-            <div className={style.chattime}>{name}</div>
-          </div>
-          <div className={style.bottom}>
+        <View style={s.info}>
+          <View style={s.top}>
+            <View style={s.chattime}>{name}</View>
+          </View>
+          <View style={s.bottom}>
             {children}
-          </div>
-        </div>
-      </div>
+          </View>
+        </View>
+      </View>
     );
   }
 }

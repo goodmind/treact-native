@@ -1,12 +1,13 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { IStepNext } from 'containers/Login';
-const t = require('../../style.css');
+const t = require('../../style.js');
 
 type IProps = Pick<IStepNext, 'nextStep'>;
 
 const Intro = ({ nextStep }: IProps) => {
   return (
-    <div className={t.loginStep}>
+    <View style={t.loginStep}>
       <img
         width={102}
         height={102}
@@ -18,8 +19,8 @@ const Intro = ({ nextStep }: IProps) => {
       <p>
         It's <strong>fast</strong> and <strong>secure</strong>.
       </p>
-      <button onClick={nextStep} className={`${t.btn} ${t.primary}`}>Start messaging</button>
-    </div>
+      <button onClick={nextStep} style={[t.btn, t.primary]}>Start messaging</button>
+    </View>
   );
 };
 

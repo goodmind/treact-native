@@ -1,13 +1,14 @@
 import * as React from 'react';
-const s = require('./style.css');
+import { View } from 'react-native';
+const s = require('./style.js');
 
 interface IProps {
   children?: React.ReactNode;
 }
 
 const InstantMessages = ({ children }: IProps) => (
-  <div className={s.main}>
+  <View style={s.main}>
     {children}
-  </div>
+  </View>
 );
 export { InstantMessages }

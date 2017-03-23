@@ -1,13 +1,13 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { ChatFooter } from 'containers';
 import * as InfiniteScroll from 'react-infinite-scroller';
-
-const s = require('./style.css');
+const s = require('./style.js');
 
 export const DefaultScreen = () => (
-  <div className={s.chat}>
-    <div className={s.bubble}>Please select a chat to start messaging</div>
-  </div>
+  <View style={s.chat}>
+    <View style={s.bubble}>Please select a chat to start messaging</View>
+  </View>
 );
 
 type IProps = {
@@ -17,25 +17,25 @@ type IProps = {
 };
 
 const ChatHeader = ({ name, userCount }) => (
-  <div className={s.chatheader}>
-    <div className={s.left}>
-      <div className={s.top}>{name}</div>
-      <div className={s.bottom}>{userCount} members</div>
-    </div>
-    <div className={s.right} />
-  </div>
+  <View style={s.chatheader}>
+    <View style={s.left}>
+      <View style={s.top}>{name}</View>
+      <View style={s.bottom}>{userCount} members</View>
+    </View>
+    <View style={s.right} />
+  </View>
 );
 
 class Chat extends React.Component<IProps, {}> {
   public render() {
     const { name, userCount, children, loadMore } = this.props;
     return (
-      <div className={s.chat}>
-        <div className={s.chatcontainer}>
+      <View style={s.chat}>
+        <View style={s.chatcontainer}>
           <ChatHeader name={name} userCount={userCount} />
-          <div className={s.chatbody}>
+          <View style={s.chatbody}>
             <InfiniteScroll
-              className={s.box}
+              style={s.box}
               pageStart={0}
               loadMore={loadMore}
               initialLoad={false}
@@ -44,10 +44,10 @@ class Chat extends React.Component<IProps, {}> {
               useWindow={false}>
               {children}
             </InfiniteScroll>
-          </div>
+          </View>
           <ChatFooter />
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

@@ -1,7 +1,6 @@
 URL = window.URL || window.webkitURL;
 const BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
-const buggyUnknownBlob = navigator.userAgent.indexOf('Safari') !== -1 &&
-  navigator.userAgent.indexOf('Chrome') === -1;
+const buggyUnknownBlob = false;
 
 let blobSupported = true;
 

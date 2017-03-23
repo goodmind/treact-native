@@ -4,7 +4,7 @@ import { IStore } from 'redux/IStore';
 import { pathOr } from 'ramda';
 import { PeerPhotoEmpty, PeerPhoto } from 'components/PeerPhoto';
 import picStore from 'helpers/FileManager/picStore';
-import * as classNames from 'classnames';
+// import * as classNames from 'classnames';
 import { FileStatus } from 'redux/modules/files';
 
 interface IConnectedState {
@@ -14,16 +14,16 @@ interface IConnectedState {
 interface IOwnProps {
   peerID: number;
   withPhoto?: boolean;
-  className?: string;
+  style?: object;
 }
 
 type IProps = IConnectedState & IOwnProps;
 
-const PeerPhotoContainer = ({ photoId, className = '' }: IProps) => {
-  const css = classNames('avatar', className);
+const PeerPhotoContainer = ({ photoId, style = {} }: IProps) => {
+  // const css = classNames('avatar', className);
   return picStore.has(photoId)
-    ? <PeerPhoto id={photoId} className={css} />
-    : <PeerPhotoEmpty className={css}/>;
+    ? <PeerPhoto id={photoId} style={style} />
+    : <PeerPhotoEmpty style={style} />;
 };
 
 

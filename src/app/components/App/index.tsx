@@ -1,14 +1,15 @@
 import * as React from 'react';
-const s = require('./style.css');
+import { View } from 'react-native';
+const s = require('./style.js');
 
 interface IProps {
   children?: React.ReactNode;
 }
 
 const App = ({ children }: IProps) => (
-  <section className={s.app}>
+  <View style={s.app}>
     {children}
-  </section>
+  </View>
 );
 
 export { App }

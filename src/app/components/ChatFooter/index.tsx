@@ -1,15 +1,16 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import AutoSizeTextarea from 'react-autosize-textarea';
-const s = require('../Chat/style.css');
+const s = require('../Chat/style.js');
 
 export const ChatFooter = ({ value, change, submit }) => (
-  <div className={s.chatfooter}>
+  <View style={s.chatfooter}>
     <AutoSizeTextarea
       onChange={change}
-      className={s.editText}
+      style={s.editText}
       value={value}
       rows={1}
       placeholder="  Write a message" />
-    <div className={s.sendbutton} onClick={submit}>Send</div>
-  </div>
+    <View style={s.sendbutton} onClick={submit}>Send</View>
+  </View>
 );

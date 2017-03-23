@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { ChatListSearch } from 'components';
 import * as InfiniteScroll from 'react-infinite-scroller';
 
-const style = require('./style.css');
+const s = require('./style.js');
 
 interface IProps {
   loading: boolean;
@@ -11,9 +12,9 @@ interface IProps {
 }
 
 const LoadingPane = () => (
-  <div className={style.chatlist}>
-    <div className={style.loading}>Loading...</div>
-  </div>
+  <View style={s.chatlist}>
+    <View style={s.loading}>Loading...</View>
+  </View>
 );
 
 class ChatList extends React.Component<IProps, {}> {
@@ -21,11 +22,11 @@ class ChatList extends React.Component<IProps, {}> {
     const { loading, children, loadMore, hasMore } = this.props;
 
     return (
-      <div className={style.chatlist}>
+      <View style={s.chatlist}>
         <ChatListSearch />
-        <div className={style.chatbody}>
+        <View style={s.chatbody}>
           <InfiniteScroll
-            className={style.box}
+            style={s.box}
             pageStart={0}
             loadMore={loadMore}
             initialLoad={false}
@@ -34,8 +35,8 @@ class ChatList extends React.Component<IProps, {}> {
             {children}
             {loading && <LoadingPane />}
           </InfiniteScroll>
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

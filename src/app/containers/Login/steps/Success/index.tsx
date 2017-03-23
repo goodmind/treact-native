@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { IStore } from 'redux/IStore';
 
@@ -16,10 +17,10 @@ class SuccessImpl extends React.Component<IProps, {}> {
   public render() {
     const print = this.toPrintable();
     return (
-      <div>
+      <View>
         Success
         {print}
-      </div>
+      </View>
     );
   }
 }

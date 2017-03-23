@@ -1,10 +1,14 @@
 {
   "presets": [
-    //["es2015", {"modules": false}]
+    "react-native"
   ],
+  "sourceMaps": true,
   "plugins": [
-    // "react-hot-loader/babel",
-    // "dynamic-import-webpack",
-    "transform-async-to-generator"
+    ["transform-builtin-extend", {
+      "globals": ["Map"]
+    }],
+    ["module-resolver", {
+      "root": ["./build/app", "./build/app/redux"]
+    }]
   ]
 }

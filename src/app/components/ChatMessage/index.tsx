@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { View } from 'react-native';
 
-const s = require('./style.css');
-
+const s = require('./style.js');
 interface IProps {
   message: any;
   activeChat: any;
@@ -12,20 +12,20 @@ class ChatMessage extends React.Component<IProps, {}> {
     const { message, activeChat } = this.props;
 
     return (
-      <div className={s.message}>
-        <div className={s.unread}
-             id="unread">{activeChat.unreadItems} unread messages</div>
-        <div className={s.flexcontainer}>
+      <View style={s.message}>
+        <View style={s.unread}
+             id="unread">{activeChat.unreadItems} unread messages</View>
+        <View style={s.flexcontainer}>
           <img
             src={message.fromUser.avatarUrlSmall}
-            className={s.messageavatar} />
-          <div
-            className={s.messagebody}>
-            <div className={s.sender}>{message.fromUser.displayName}</div>
+            style={s.messageavatar} />
+          <View
+            style={s.messagebody}>
+            <View style={s.sender}>{message.fromUser.displayName}</View>
             {message.text}
-          </div>
-        </div>
-      </div>
+          </View>
+        </View>
+      </View>
     );
   }
 }

@@ -1,10 +1,15 @@
 import * as React from 'react';
-const s = require('./style.css');
+import { View } from 'react-native';
+const s = require('./style.js');
 
-const Login = ({ children }) => (
-  <div className={s.main}>
+interface IProps {
+  children?: React.ReactNode;
+}
+
+const Login = ({ children }: IProps) => (
+  <View style={s.main}>
     {children}
-  </div>
+  </View>
 );
 
 export { Login }

@@ -1,11 +1,9 @@
+import { AsyncStorage as storage } from 'react-native';
 import { serverConfig, appSettings } from './config';
 import MTProto, { AsyncStorage } from 'telegram-mtproto';
 import { /* pipe, */ map /*, apply, toPairs*/ } from 'ramda';
-import * as localforage from 'localforage';
 
-export const storage = localforage.createInstance({
-  driver: localforage.LOCALSTORAGE,
-});
+export { storage }
 
 const LocalStorage: AsyncStorage = {
   get: storage.getItem, // (...keys) => Promise.all(map<string, Promise<any>>(storage.getItem.bind(storage), keys)),

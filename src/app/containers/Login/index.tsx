@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Steps from './steps';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { IStore } from 'redux/IStore';
 import { Login } from 'components/Login';
@@ -79,7 +80,7 @@ class LoginImpl extends React.Component<IProps, IState> {
       case 5:
         return <Steps.Success />;
       default:
-        return <div />;
+        return <View />;
     }
   }
 

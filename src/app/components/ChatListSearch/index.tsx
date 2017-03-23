@@ -1,12 +1,13 @@
 import * as React from 'react';
+import { View } from 'react-native';
 
-const s = require('./style.css');
+const s = require('./style.js');
 
 const ChatListSearch = () => (
-  <div className={s.chatlistsearch}>
-    <input type="text" className={s.search} placeholder="Search" />
-    <div className={s.searchButton} />
-  </div>
+  <View style={s.chatlistsearch}>
+    <input type="text" style={s.search} placeholder="Search" />
+    <View style={s.searchButton} />
+  </View>
 );
 
 export { ChatListSearch }

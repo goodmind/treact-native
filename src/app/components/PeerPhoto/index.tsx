@@ -6,16 +6,16 @@ const defPhoto = require('./usercolor1.png');
 
 interface IProps {
   id?: number | 'default';
-  className?: string;
+  style?: object;
 }
 
-export const PeerPhotoEmpty = ({ className }: IProps) =>
+export const PeerPhotoEmpty = ({ style }: IProps) =>
   <img
-    className={className}
+    style={style}
     src={defPhoto} />;
 
-export const PeerPhoto = ({ id, className }: IProps) =>
+export const PeerPhoto = ({ id, style }: IProps) =>
   <img
-    className={className}
+    style={style}
     src={picStore.get(id)} />;
 // NOTE Sending blob through props is definitely slower

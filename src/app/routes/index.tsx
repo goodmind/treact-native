@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IndexRoute, Route } from 'react-router';
+import { IndexRoute, Route } from 'react-router-native';
 import { App, Home, InstantMessages, Login } from 'containers';
 
 export default (
