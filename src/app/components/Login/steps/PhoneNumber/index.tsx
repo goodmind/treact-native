@@ -1,32 +1,36 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { TextInput, Text, View } from 'react-native';
+import { Button } from 'components/Login/Button';
 
-const s = require('./style.js');
-const t = require('../../style.js');
+// const s = require('./style');
+const t = require('../../style');
 
-const PhoneNumber = ({ error, nextStep, change, phoneCode }) => (
+const PhoneNumber = ({ error, nextStep, change /*, phoneCode*/ }: any) => (
   <View style={t.loginStep}>
-    <h1>Your Phone</h1>
-    <p>
+    <Text>Your Phone</Text>
+    <Text>
       Please confirm your country code and enter your phone number.
-    </p>
+    </Text>
     <View
       // style={`row ${t.formGroupLogin}`}
       style={t.formGroupLogin}>
-      <input
+      {/*<TextInput
         onChange={change}
-        name="phoneCode"
+        key="phoneCode"
         style={s.phoneCode}
         // style={`${s.phoneCode} col-xs-2 form-control form-control-lg`}
-        value={phoneCode} type="tel" />
-      <input
+        defaultValue={phoneCode} />*/}
+      <TextInput
+        style={{height: 40}}
         onChange={change}
-        name="phoneNumber"
+        key="phoneNumber"
         // style="col-xs-10 form-control form-control-lg"
-        placeholder="--- --- -- --" type="tel" />
+        placeholder="--- --- -- --" />
     </View>
-    {error && <View>Error type: {error.description}</View>}
-    <button onClick={nextStep} style={[t.btn, t.primary]}>Next</button>
+    {error && <Text>Error type: {error.description}</Text>}
+    <Button
+      title="Next"
+      onPress={nextStep} />
   </View>
 );
 

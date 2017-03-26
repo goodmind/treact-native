@@ -58,7 +58,7 @@ module.exports = {
         "paddingBottom": 6,
         "paddingLeft": 0,
         "paddingRight": 0,
-        "textAlign": "center",
+        // "textAlign": "center",
         "borderBottomWidth": 1,
         "borderBottomColor": "rgba(0, 0, 0, .1)"
     },

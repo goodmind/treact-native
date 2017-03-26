@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Image } from 'react-native';
 
 import picStore from 'helpers/FileManager/picStore';
 
@@ -10,12 +11,12 @@ interface IProps {
 }
 
 export const PeerPhotoEmpty = ({ style }: IProps) =>
-  <img
+  <Image
     style={style}
-    src={defPhoto} />;
+    source={defPhoto} />;
 
 export const PeerPhoto = ({ id, style }: IProps) =>
-  <img
+  <Image
     style={style}
-    src={picStore.get(id)} />;
+    source={picStore.get(id)} />;
 // NOTE Sending blob through props is definitely slower

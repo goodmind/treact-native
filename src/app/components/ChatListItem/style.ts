@@ -50,7 +50,7 @@ module.exports = {
         "paddingBottom": 1,
         "paddingLeft": 5,
         "paddingRight": 5,
-        "textAlign": "center"
+        // "textAlign": "center"
     },
     "info": {
         "flexDirection": "column",
@@ -63,7 +63,7 @@ module.exports = {
     "chatname": {
         "alignSelf": "center",
         "color": "#000",
-        "flex": "1 100%",
+        // "flex": "1 100%",
         "fontWeight": "600"
     },
     "time": {

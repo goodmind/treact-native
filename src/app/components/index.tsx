@@ -1,4 +1,5 @@
 export { App } from './App';
+export { Strong } from './Strong';
 export { Header } from './Header';
 export { Chat } from './Chat';
 export { ChatList } from './ChatList';

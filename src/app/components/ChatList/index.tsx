@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { ChatListSearch } from 'components';
 import * as InfiniteScroll from 'react-infinite-scroller';
 
-const s = require('./style.js');
+const s = require('./style');
 
 interface IProps {
   loading: boolean;

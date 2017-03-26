@@ -1,25 +1,28 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { Text, View, Image } from 'react-native';
+import { Strong } from 'components';
 import { IStepNext } from 'containers/Login';
-const t = require('../../style.js');
+import { Button } from 'components/Login/Button';
+const t = require('../../style');
 
 type IProps = Pick<IStepNext, 'nextStep'>;
 
 const Intro = ({ nextStep }: IProps) => {
   return (
     <View style={t.loginStep}>
-      <img
-        width={102}
-        height={102}
-        src={require('./icon102.png')} />
-      <h1>Telegram Desktop</h1>
-      <p>
-        Welcome to the official <a href="https://telegram.org">Telegram</a> desktop app.
-      </p>
-      <p>
-        It's <strong>fast</strong> and <strong>secure</strong>.
-      </p>
-      <button onClick={nextStep} style={[t.btn, t.primary]}>Start messaging</button>
+      <Image
+        style={{width: 102, height: 102}}
+        source={require('./icon102.png')} />
+      <Text>Telegram Desktop</Text>
+      <Text>
+        Welcome to the official Telegram desktop app.
+      </Text>
+      <Text>
+        It's <Strong>fast</Strong> and <Strong>secure</Strong>.
+      </Text>
+      <Button
+        title="Start messaging"
+        onPress={nextStep} />
     </View>
   );
 };

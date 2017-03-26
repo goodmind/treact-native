@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { Action } from 'redux-act';
 import { isNil, isEmpty, unless, when, pipe, filter,
@@ -70,7 +71,7 @@ const DownloadAssistant = ({ photoCache, files, load, done }: IPropsStore & IPro
     photoCache.map(mapLoad);
   };
   setTimeout(run, 10);
-  return <span />;
+  return <View />;
 };
 
 const queueList = pipe(

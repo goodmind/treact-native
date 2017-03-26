@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, TextInput } from 'react-native';
 
-const s = require('./style.js');
+const s = require('./style');
 
 const ChatListSearch = () => (
   <View style={s.chatlistsearch}>
-    <input type="text" style={s.search} placeholder="Search" />
+    <TextInput style={s.search} placeholder="Search" />
     <View style={s.searchButton} />
   </View>
 );

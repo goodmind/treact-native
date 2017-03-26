@@ -3,7 +3,7 @@ module.exports = {
         "backgroundColor": "#6389a8",
         "flex": 1,
         "height": 39,
-        "width": 100,
+        "width": '100%',
         /*"a": {
             "color": "#d4e3ef",
             "cursor": "default",

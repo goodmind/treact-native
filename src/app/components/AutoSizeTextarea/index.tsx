@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { TextInput } from 'react-native';
 
 interface IProps {
   className?: string;
@@ -9,7 +10,7 @@ interface IProps {
 
 const AutoSizeTextarea = (props: IProps) => {
   const { value } = props;
-  return <textarea {...props}>{value}</textarea>;
+  return <TextInput {...props}>{value}</TextInput>;
 };
 
 export { AutoSizeTextarea }

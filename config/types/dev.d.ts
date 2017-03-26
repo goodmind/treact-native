@@ -4,6 +4,7 @@
 
 declare module ''
 
+/// <reference path="react-native.d.ts" />
 /// <reference path="ramda.d.ts" />
 /// <reference path="redux-act.d.ts" />
 

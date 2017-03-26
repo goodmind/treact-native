@@ -6,6 +6,9 @@ import { IStepNext as IOwnProps } from '../..';
 import { IAuthError } from 'redux/modules/auth';
 import { PhoneNumber } from 'components/Login/steps';
 
+const ReactNativeComponentTree =
+  require('react-native/Libraries/Renderer/src/renderers/native/ReactNativeComponentTree');
+
 type IConnectedState = Pick<IStore, 'auth'>;
 type IConnectedActions = { dispatch: IDispatch };
 type IProps = IConnectedState & IConnectedActions & IOwnProps;
@@ -22,8 +25,11 @@ class PhoneNumberImpl extends React.Component<IProps, IState> {
     error: null,
   };
 
-  private handleChange = event =>
-    this.setState({ [event.target.name]: event.target.value });
+  private handleChange = event => {
+    const node = ReactNativeComponentTree.getInstanceFromNode(event.nativeEvent.target)._currentElement;
+    const { key } = node._owner._currentElement;
+    this.setState({ [key]: event.nativeEvent.text });
+  }
 
   public handleNextStep = () => {
     const { dispatch, nextStep, update } = this.props;

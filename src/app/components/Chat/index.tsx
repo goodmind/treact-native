@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { ChatFooter } from 'containers';
 import * as InfiniteScroll from 'react-infinite-scroller';
-const s = require('./style.js');
+const s = require('./style');
 
 export const DefaultScreen = () => (
   <View style={s.chat}>

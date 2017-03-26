@@ -11,7 +11,7 @@ export const appSettings = {
 };
 
 export const serverConfig = {
-  webogram: true,
+  webogram: false,
 };
 
 export const config = {

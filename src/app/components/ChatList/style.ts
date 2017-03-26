@@ -20,6 +20,6 @@ module.exports = {
         "color": "#767676",
         "fontSize": 14,
         "marginTop": 45,
-        "textAlign": "center"
+        // "textAlign": "center"
     }
 }

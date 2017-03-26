@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { PeerPhoto } from 'containers/PeerPhoto';
 
-const s = require('./style.js');
+const s = require('./style');
 
 interface IOwnProps {
   id: number;

@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { TouchableHighlight, Text, View } from 'react-native';
 // import * as styles from 'styles';
 import { PeerPhoto } from 'containers/PeerPhoto';
 
-const s = require('./style.js');
+const s = require('./style');
 
 interface IChatListBasicProps {
   id: number;
   name: string;
   selected: boolean;
-  click: React.EventHandler<React.MouseEvent<any>>;
+  click: () => void;
 }
 
 interface IChatListFullProps extends IChatListBasicProps {
@@ -42,8 +42,8 @@ const SenderPreview = ({ userName }: SenderProps) => {
   });*/
   return (
     <View style={s.sender}>
-      <span>{userName}</span>
-      <span>:</span>
+      <Text>{userName}</Text>
+      <Text>:</Text>
     </View>
   );
 };
@@ -52,7 +52,7 @@ type MessageProps = { text: string, userName: string, isYou: boolean };
 const MessagePreview = ({ text, userName, isYou }: MessageProps) => (
   <View style={s.message}>
     <SenderPreview userName={isYou ? 'You' : userName} />
-    <span>{text}</span>
+    <Text>{text}</Text>
   </View>
 );
 
@@ -73,8 +73,8 @@ export class ChatListItemEmpty extends React.Component<IChatListBasicProps, {}> 
       [s.active]: selected,
     });*/
     return (
-      <View
-        onClick={click}
+      <TouchableHighlight
+        onPress={click}
         style={s.item}>
         <PeerPhoto peerID={id} />
         <View style={s.info}>
@@ -85,7 +85,7 @@ export class ChatListItemEmpty extends React.Component<IChatListBasicProps, {}> 
             {children}
           </View>
         </View>
-      </View>
+      </TouchableHighlight>
     );
   }
 }

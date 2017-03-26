@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 
-const s = require('./style.js');
+const s = require('./style');
 interface IProps {
   message: any;
   activeChat: any;
@@ -14,10 +14,10 @@ class ChatMessage extends React.Component<IProps, {}> {
     return (
       <View style={s.message}>
         <View style={s.unread}
-             id="unread">{activeChat.unreadItems} unread messages</View>
+          /* id="unread" */>{activeChat.unreadItems} unread messages</View>
         <View style={s.flexcontainer}>
-          <img
-            src={message.fromUser.avatarUrlSmall}
+          <Image
+            source={message.fromUser.avatarUrlSmall}
             style={s.messageavatar} />
           <View
             style={s.messagebody}>

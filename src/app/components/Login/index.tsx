@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View } from 'react-native';
-const s = require('./style.js');
+const s = require('./style');
 
 interface IProps {
   children?: React.ReactNode;

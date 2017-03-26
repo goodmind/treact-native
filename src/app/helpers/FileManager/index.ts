@@ -52,12 +52,6 @@ export function blobConstruct(blobParts: any[], mimeType?) {
   return blob;
 }
 
-try {
-  blobConstruct([], '');
-} catch (e) {
-  blobSupported = false;
-}
-
 class FileManager {
   public isBlobAvailable() {
     return blobSupported;

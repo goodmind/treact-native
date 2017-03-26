@@ -1,22 +1,28 @@
 import * as React from 'react';
-import { View } from 'react-native';
-const t = require('../style.js');
+import { TextInput, Text, View } from 'react-native';
+import { Button } from 'components/Login/Button';
+
+const t = require('../style');
 
 const Password = ({ error, change, nextStep }) => (
   <View style={t.loginStep}>
-    <h1>Cloud password check</h1>
-    <p>
+    <Text>Cloud password check</Text>
+    <Text>
       Please enter your cloud password.
-    </p>
+    </Text>
     <View style={t.formGroupLogin}>
-      <input
+      <TextInput
+        style={{height: 40}}
         onChange={change}
-        name="password"
+        key="password"
+        secureTextEntry={true}
         // style="form-control form-control-lg"
-        placeholder="Your cloud password" type="password" />
+        placeholder="Your cloud password" />
     </View>
-    {error && <View>Error type: {error.description}</View>}
-    <button onClick={nextStep} style={[t.btn, t.primary]}>Submit</button>
+    {error && <Text>Error type: {error.description}</Text>}
+    <Button
+      title="Submit"
+      onPress={nextStep} />
   </View>
 );
 
